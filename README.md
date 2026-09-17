@@ -11,7 +11,7 @@ The project provides a modular implementation of the BELT architecture along wit
 The overall BELT architecture is illustrated below.
 
 <p align="center">
-  <img src="assets/BELT_architecture.png" alt="BELT Architecture" width="900"/>
+  <img src="assets/BELT.jpg" alt="BELT Architecture" width="900"/>
 </p>
 
 **Figure 1.** Overall architecture of the Multimodal Bidirectional Ensemble Learning Transformer (BELT) for informativeness classification.
