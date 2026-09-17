@@ -1,30 +1,86 @@
-# BELT Inform Modularized Project
+## Dataset
 
-Multimodal Bidirectional Ensemble Learning Transformer for informativeness classification.
+The complete dataset is **large** and is therefore hosted externally on Google Drive rather than included in this repository.
 
-## Setup
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Dataset & Resources
 
-2. Prepare Data:
-   Ensure your data is structured as:
-   - `data_dir/processed/inform_train.csv`
-   - `data_dir/processed/inform_dev.csv`
-   - `data_dir/processed/inform_test.csv`
-   - Images located in the `base` directory (same as `IMG_ROOT`).
+The complete project data and related resources are available through the following Google Drive:
 
-## Usage
-Run the full pipeline from the CLI:
-```bash
-python main.py --data-dir "C:/path/to/your/data" --base "C:/path/to/output"
+**[Google Drive — BELT Dataset & Resources](https://drive.google.com/drive/folders/14829etkP5N7kePzCbHAFkZmZaHt4j3XK?usp=sharing)**
+
+The Drive contains the following directories:
+
+```text
+Google Drive/
+├── data/
+├── data_image/
+├── augmented/
+├── augmented_bagging/
+├── augmented_belt/
+├── augmented_v2/
+├── checkpoints/
+├── plots/
+├── notebooks/
+├── Documents/
+├── old/
+└── ...
 ```
 
-## Structure
-- `config.py`: Model and training hyperparameters.
-- `utils.py`: Text cleaning and utility functions.
-- `data/`: Feature extraction and PyTorch dataset implementation.
-- `models/`: BELT, CORAL, and Ensemble architectures.
-- `training/`: Training loops and evaluation metrics.
-- `pipeline.py`: High-level orchestration of the BELT process.
+### Required Data
+
+To run the BELT pipeline, you primarily need to download:
+
+* **`data/`** — processed datasets, including training, development, and test files.
+* **`data_image/`** — corresponding image data required for the multimodal pipeline.
+
+The other directories contain additional project resources such as:
+
+* `augmented/`, `augmented_bagging/`, `augmented_belt/`, `augmented_v2/` — augmented datasets and experiment-specific data.
+* `checkpoints/` — saved model checkpoints.
+* `plots/` — generated plots and experiment results.
+* `notebooks/` — Jupyter notebooks used during development and experimentation.
+* `Documents/` — supporting project documents.
+* `old/` — previous experiments and results.
+
+These additional resources are **optional** and can be accessed if you want to inspect the experiments, intermediate results, notebooks, checkpoints, or previous results.
+
+### Required Directory Structure
+
+After downloading the required folders, your local data directory should contain:
+
+```text
+data_dir/
+├── data/
+│   └── processed/
+│       ├── inform_train.csv
+│       ├── inform_dev.csv
+│       └── inform_test.csv
+│
+└── data_image/
+    └── ...
+```
+
+> **Note:** The exact image directory structure should be preserved when downloading `data_image`, as the paths referenced by the dataset files must remain valid.
+
+---
+
+## Running the Pipeline
+
+Once the required `data` and `data_image` directories are available locally:
+
+```bash
+python main.py --data-dir "C:/path/to/data" --base "C:/path/to/data_image"
+```
+
+Replace the paths with the corresponding locations on your system.
+
+### Quick Start
+
+1. Clone this repository.
+2. Install the required dependencies.
+3. Open the **Google Drive — BELT Dataset & Resources** link.
+4. Download the **`data/`** and **`data_image/`** directories.
+5. Preserve their directory structure.
+6. Run the pipeline using `main.py`.
+
+The remaining folders in the Google Drive are available for **optional inspection and reproducibility of previous experiments and results**.
